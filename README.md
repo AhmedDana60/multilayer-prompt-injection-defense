@@ -51,7 +51,8 @@ still unsafe --> fallback message
 git clone <this-repo>
 cd <this-repo>
 pip install -r requirements.txt
-cp .env.example .env     # then put your OpenAI key inside
+# create a file named .env in this folder containing:
+#   OPENAI_API_KEY=your_key_here
 ```
 
 ## Run it
@@ -69,8 +70,9 @@ indirect prompt injection is demonstrated against Layer 2.
 
 To actually run the demo you need to supply two things of your own:
 
-1. **Your own OpenAI API key.** Copy `.env.example` to `.env` and put your key
-   inside. Layers 3 and 4 both call a model. No key is included here.
+1. **Your own OpenAI API key.** Create a file named `.env` in this folder
+   containing `OPENAI_API_KEY=your_key_here`. Layers 3 and 4 both call a
+   model. No key is included here.
 2. **The Layer 1 classifier.** The fine-tuned DeBERTa-v3-small checkpoint is
    about 550MB and is not committed to this repository. Place it in
    `models/deberta-finetuned-v3/`, or change `DEBERTA_MODEL_PATH` in
