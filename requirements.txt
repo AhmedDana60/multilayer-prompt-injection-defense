@@ -1,0 +1,8 @@
+transformers
+torch
+openai
+python-dotenv
+sentencepiece
+protobuf
+numpy<2
+datasets
